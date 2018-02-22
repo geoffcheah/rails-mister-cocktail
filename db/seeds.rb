@@ -44,10 +44,12 @@ id_array.each do |id|
   cocktail_hash = cocktail["drinks"].first
   new_cocktail = Cocktail.new(name: cocktail_hash["strDrink"])
   new_cocktail.save
-  new_dose = Dose.new(description: cocktail_hash["strMeasure1"])
-  new_dose.cocktail = new_cocktail
-  new_dose.ingredient = Ingredient.find_by_name(cocktail_hash["strIngredient1"])
-  new_dose.save
+  15.times do |i|
+    new_dose = Dose.new(description: cocktail_hash["strMeasure#{i}"])
+    new_dose.cocktail = new_cocktail
+    new_dose.ingredient = Ingredient.find_by_name(cocktail_hash["strIngredient#{i}"])
+    new_dose.save
+  end
 end
 
 puts "finished!"
