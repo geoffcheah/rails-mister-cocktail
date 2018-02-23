@@ -16,5 +16,11 @@
     <%= f.association :ingredient %>
     <%= f.submit %>
 <% end %>
+
+<%= simple_form_for(@cocktail) do |f| %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+<% end %>
+
 <%= link_to "Back to Cocktails list", cocktails_path %>
 </div>

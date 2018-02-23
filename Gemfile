@@ -8,6 +8,12 @@ ruby '2.4.3'
 # security
 gem 'figaro'
 
+# cloud services
+gem 'cloudinary'
+
+# uploaders
+gem 'carrierwave', '~> 1.2'
+
 # design
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
