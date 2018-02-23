@@ -1,6 +1,21 @@
 .form-container {
-  padding: 20px;
-  .control-label {
+  padding: 30px;
+  // .control-label {
+  //   color: white !important;
+  // }
+  .link-back {
     color: white !important;
+    &:hover {
+      color: white !important;
+    }
   }
+}
+
+label.control-label {
+  color: #4AF2A1;
+}
+
+p {
+  margin-top: 20px;
+  color: white;
 }

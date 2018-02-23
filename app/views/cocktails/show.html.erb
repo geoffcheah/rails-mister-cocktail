@@ -23,6 +23,8 @@
       <%= f.association :ingredient %>
       <%= f.button :submit, class: "btn btn-success" %>
     <% end %>
+    <p class="link-back-cocktails">
+      <%= link_to "Back to Cocktails list", cocktails_path, class: "link-back" %>
+    </p>
   </div>
-<%= link_to "Back to Cocktails list", cocktails_path, class: "link-back" %>
 </div>
