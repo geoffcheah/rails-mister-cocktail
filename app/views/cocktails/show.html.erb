@@ -1,27 +1,28 @@
 <div class="container">
   <h1><%= @cocktail.name %></h1>
   <h3>Cocktail Ingredients</h3>
-  <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
-  <ul>
-    <% @cocktail.doses.each do |dose| %>
-     <li><%= dose.ingredient.name %>, dose: <%= dose.description %>
-     <%= link_to dose_path(dose), method: :delete  do %>
-      <i class="fas fa-trash"></i>
-      <% end %>
-    </li>
-     <% end %>
-  </ul>
-  <h4>Add Ingredients/Doses</h4>
+  <div class="card info-box">
+    <div class="dose-box">
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li><%= dose.ingredient.name %>, dose: <%= dose.description %>
+            <%= link_to dose_path(dose), method: :delete  do %>
+              <i class="fas fa-trash"></i>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+      <%= cl_image_tag @cocktail.photo, height: 400, width: 500, crop: :fill, class: "drink-image" %>
+  </div>
+
+  <div class="form-container">
+    <h4>Add Ingredients/Doses</h4>
     <%= simple_form_for [@cocktail,@dose] do |f| %>
-    <%= f.input :description %>
-    <%= f.association :ingredient %>
-    <%= f.submit %>
-<% end %>
-
-<%= simple_form_for(@cocktail) do |f| %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-<% end %>
-
-<%= link_to "Back to Cocktails list", cocktails_path %>
+      <%= f.input :description %>
+      <%= f.association :ingredient %>
+      <%= f.button :submit, class: "btn btn-success" %>
+    <% end %>
+  </div>
+<%= link_to "Back to Cocktails list", cocktails_path, class: "link-back" %>
 </div>
