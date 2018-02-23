@@ -43,7 +43,7 @@ id_array.each do |id|
   cocktail = JSON.parse(cocktail_serialized)
   cocktail_hash = cocktail["drinks"].first
   new_cocktail = Cocktail.new(name: cocktail_hash["strDrink"])
-  photo_url = cocktail_hash["strDrinkThumb"]
+  photo_url = "http://#{cocktail_hash["strDrinkThumb"]}"
   new_cocktail.remote_photo_url = photo_url
   new_cocktail.save
   15.times do |i|

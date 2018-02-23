@@ -1,0 +1,21 @@
+.card {
+  height: 300px;
+  position: relative;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 12px 0px rgba(74,242,161,1);
+}
+
+
+.card-description {
+  h2 {
+  font-size: 18px;
+  position: absolute;
+  padding: 10px;
+  opacity: 0.7;
+  bottom: 10px;
+  left: 10px;
+  }
+}
